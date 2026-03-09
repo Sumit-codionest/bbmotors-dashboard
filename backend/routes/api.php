@@ -1,5 +1,6 @@
 <?php
 
+use App\Controllers\AdminMasterController;
 use App\Controllers\AuthController;
 use App\Controllers\BulkUploadController;
 use App\Controllers\CarController;
@@ -52,3 +53,9 @@ $router->add('POST', '/api/codes/header', [MasterController::class, 'createHeade
 $router->add('POST', '/api/codes/details', [MasterController::class, 'createDetail'], [AuthMiddleware::class]);
 $router->add('PUT', '/api/codes/details/{id}', [MasterController::class, 'updateDetail'], [AuthMiddleware::class]);
 $router->add('DELETE', '/api/codes/details/{id}', [MasterController::class, 'deleteDetail'], [AuthMiddleware::class]);
+
+$router->add('GET', '/api/masters/{entity}', [AdminMasterController::class, 'index'], [AuthMiddleware::class]);
+$router->add('GET', '/api/masters/{entity}/{id}', [AdminMasterController::class, 'show'], [AuthMiddleware::class]);
+$router->add('POST', '/api/masters/{entity}', [AdminMasterController::class, 'store'], [AuthMiddleware::class]);
+$router->add('PUT', '/api/masters/{entity}/{id}', [AdminMasterController::class, 'update'], [AuthMiddleware::class]);
+$router->add('DELETE', '/api/masters/{entity}/{id}', [AdminMasterController::class, 'delete'], [AuthMiddleware::class]);

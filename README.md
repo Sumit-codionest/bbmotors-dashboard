@@ -61,6 +61,7 @@ npm run dev
 - Users: `/api/users`
 - Companies: `/api/companies`
 - Masters: `/api/countries`, `/api/states`, `/api/cities`, `/api/codes/:codeName`
+- Masters Admin CRUD: `/api/masters/:entity` for all required master tables
 
 ## Default Admin Credentials
 - Username: `admin`

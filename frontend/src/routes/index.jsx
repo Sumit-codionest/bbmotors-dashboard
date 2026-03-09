@@ -6,6 +6,7 @@ import InventoryPage from '../pages/InventoryPage';
 import CrudPage from '../pages/CrudPage';
 import UsersPage from '../pages/UsersPage';
 import CarFormPage from '../pages/CarFormPage';
+import MastersPage from '../pages/MastersPage';
 
 const Private = ({ children }) => (localStorage.getItem('access_token') ? children : <Navigate to="/login" />);
 
@@ -22,7 +23,8 @@ export const appRoutes = [
       { path: 'models', element: <CrudPage resource="models" title="Models" /> },
       { path: 'features', element: <CrudPage resource="features" title="Features" /> },
       { path: 'companies', element: <CrudPage resource="companies" title="Companies" /> },
-      { path: 'users', element: <UsersPage /> }
+      { path: 'users', element: <UsersPage /> },
+      { path: 'masters', element: <MastersPage /> }
     ]
   }
 ];
